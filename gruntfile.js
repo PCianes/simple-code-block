@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 				src: 'languages/*.po',
 				expand: true,
 			},
-		}
+		},
 
 		uglify: {
 			my_target: {

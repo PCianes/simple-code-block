@@ -1,4 +1,6 @@
-.entry-content .wp-block-simple-code-block-custom-toolbar,.wp-block-simple-code-block-custom-toolbar{background:rgba(254,243,224,0.52);border:5px #f7b733 solid;padding:1rem}.entry-content .wp-block-simple-code-block-custom-toolbar.high-contrast,.wp-block-simple-code-block-custom-toolbar.high-contrast{background:#000;border-color:#000;color:white}.entry-content .wp-block-simple-code-block-custom-toolbar h2,.wp-block-simple-code-block-custom-toolbar h2{color:#f7b733;font-size:2rem;margin:1rem 0}.entry-content .wp-block-simple-code-block-custom-toolbar p,.wp-block-simple-code-block-custom-toolbar p{font-size:1.4rem}.entry-content .wp-block-simple-code-block-custom-toolbar li,.wp-block-simple-code-block-custom-toolbar li{list-style-position:inside}
-.wp-block-simple-code-block-dynamic li{list-style-position:inside}.wp-block-simple-code-block-dynamic .spinner{float:none;margin:6px 2px 10px 0}
-.wp-block-simple-code-block-meta-box label{margin-right:5px}
-.entry-content .wp-block-simple-code-block-inspector-control-fields,.wp-block-simple-code-block-inspector-control-fields{background:rgba(254,243,224,0.52);border:5px #f7b733 solid;padding:1rem}.entry-content .wp-block-simple-code-block-inspector-control-fields.high-contrast,.wp-block-simple-code-block-inspector-control-fields.high-contrast{background:#000;border-color:#000;color:white}.entry-content .wp-block-simple-code-block-inspector-control-fields h2,.wp-block-simple-code-block-inspector-control-fields h2{color:#f7b733;font-size:2rem;margin:1rem 0}.entry-content .wp-block-simple-code-block-inspector-control-fields p,.wp-block-simple-code-block-inspector-control-fields p{font-size:1.4rem}.entry-content .wp-block-simple-code-block-inspector-control-fields li,.wp-block-simple-code-block-inspector-control-fields li{list-style-position:inside}
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/

@@ -12,9 +12,9 @@
  * @package           Simple_Code_Block
  *
  * @wordpress-plugin
- * Plugin Name:       Simple_Code_Block
+ * Plugin Name:       Simple Code Block
  * Plugin URI:        https://pablocianes.com/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       A simple block to insert code into the new WordPress editor: Gutenberg.
  * Version:           1.0.0
  * Author:            Pablo Cianes
  * Author URI:        https://pablocianes.com/
@@ -25,18 +25,18 @@
  */
 
 /*
-Simple_Code_Block is free software: you can redistribute it and/or modify
+Simple Code Block is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
 any later version.
 
-Simple_Code_Block is distributed in the hope that it will be useful,
+Simple Code Block is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Simple_Code_Block. If not, see http://www.gnu.org/licenses/gpl-2.0.txt.
+along with Simple Code Block. If not, see http://www.gnu.org/licenses/gpl-2.0.txt.
 */
 
 // If this file is called directly, abort.

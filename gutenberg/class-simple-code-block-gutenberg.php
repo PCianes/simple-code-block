@@ -83,7 +83,7 @@ class Simple_Code_Block_Gutenberg {
 			array(
 				array(
 					'slug' => 'simple-code-block',
-					'title' => __( 'Simple_Code_Block', 'simple-code-block' ),
+					'title' => __( 'Simple Code Block', 'simple-code-block' ),
 				),
 			)
 		);
@@ -144,11 +144,19 @@ class Simple_Code_Block_Gutenberg {
 		}
 
 		wp_enqueue_script(
+			'simple-code-block-gutenberg-frontend-ace',
+			plugin_dir_url( __FILE__ ) . 'src/ace-editor/ace.js',
+			array(),
+			filemtime( plugin_dir_path( __FILE__ ) . 'src/ace-editor/ace.js' )
+		);
+
+		wp_enqueue_script(
 			'simple-code-block-gutenberg-frontend',
 			plugin_dir_url( __FILE__ ) . 'src/frontend.blocks.js',
-			array(),
+			array('jquery', 'simple-code-block-gutenberg-frontend-ace'),
 			filemtime( plugin_dir_path( __FILE__ ) . 'src/frontend.blocks.js' )
 		);
+
 	}
 
 	/**
