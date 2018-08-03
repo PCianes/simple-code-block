@@ -50,43 +50,6 @@ class Simple_Code_Block_Gutenberg {
 
 		$this->plugin_name = $plugin_name;
 		$this->version     = $version;
-
-		$this->load_dependencies();
-	}
-
-	/**
-	 * Load the required dependencies for the Gutenberg facing functionality.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function load_dependencies() {
-		/**
-		 * The static class responsible for dynamic callbacks from PHP to Gutenberg
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'gutenberg/class-simple-code-block-render-dynamic.php';
-	}
-
-	/**
-	 * Add new custom categories for blocks
-	 *
-	 * @since    1.0.0
-	 */
-	public function add_custom_blocks_categories( $categories, $post ) {
-
-		if ( $post->post_type !== 'post' ) {
-			return $categories;
-		}
-
-		return array_merge(
-			$categories,
-			array(
-				array(
-					'slug' => 'simple-code-block',
-					'title' => __( 'Simple Code Block', 'simple-code-block' ),
-				),
-			)
-		);
 	}
 
 	/**
@@ -156,79 +119,6 @@ class Simple_Code_Block_Gutenberg {
 			array('jquery', 'simple-code-block-gutenberg-frontend-ace'),
 			filemtime( plugin_dir_path( __FILE__ ) . 'src/frontend.blocks.js' )
 		);
-
-	}
-
-	/**
-	 * Allow to work in Gutenberg with dynamic blocks
-	 *
-	 * @since    1.0.0
-	 */
-	public function register_dynamic_blocks() {
-
-		/**
-		 * Only load if Gutenberg is available.
-		 */
-		if ( ! function_exists( 'register_block_type' ) ) {
-			return;
-		}
-
-		/**
-		 * Hook server side rendering into render callback
-		 */
-		register_block_type( 'simple-code-block/block-name-dynamic', array(
-			'render_callback' => array( Simple_Code_Block_Render_Dynamic::class, 'block_name_dynamic'),
-		 	)
-		);
-
-	}
-
-	/**
-	 * Allow to work in Gutenberg with some meta fields
-	 *
-	 * @since    1.0.0
-	 */
-	public function register_meta_fields() {
-
-		register_meta(
-			'post',
-			'simple-code-block-meta-key-name',
-			array(
-				'type'         => 'string', //'number'
-				'single'       => true,
-				'show_in_rest' => true,
-			 )
-		);
-
-	}
-
-	/**
-	 * Add Gutenberg templates to post types
-	 *
-	 * @since    1.0.0
-	 */
-	public function add_templates_to_post_types( $args, $post_type ) {
-
-		if ( 'post' == $post_type ) {
-
-			$args['template_lock'] = true;
-			$args['template']      = [
-				[
-					'core/image',
-					[
-						'align' => 'left',
-					],
-				],
-				[
-					'core/paragraph',
-					[
-						'placeholder' => 'The only thing you can add',
-					],
-				],
-			];
-		}
-
-		return $args;
 
 	}
 
