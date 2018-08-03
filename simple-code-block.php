@@ -13,8 +13,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Simple Code Block
- * Plugin URI:        https://pablocianes.com/
- * Description:       A simple block to insert code into the new WordPress editor: Gutenberg.
+ * Description:       A simple block to insert code into Gutenberg.
  * Version:           1.0.0
  * Author:            Pablo Cianes
  * Author URI:        https://pablocianes.com/
@@ -60,27 +59,6 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 	require_once __DIR__ . '/tests/dev/simple-code-block-configuration.php';
 }
-
-/**
- * The code that runs during plugin activation.
- * This action is documented in core/class-simple-code-block-activator.php
- */
-function activate_simple_code_block() {
-	require_once plugin_dir_path( __FILE__ ) . 'core/class-simple-code-block-activator.php';
-	Simple_Code_Block_Activator::activate();
-}
-
-/**
- * The code that runs during plugin deactivation.
- * This action is documented in core/class-simple-code-block-deactivator.php
- */
-function deactivate_simple_code_block() {
-	require_once plugin_dir_path( __FILE__ ) . 'core/class-simple-code-block-deactivator.php';
-	Simple_Code_Block_Deactivator::deactivate();
-}
-
-register_activation_hook( __FILE__, 'activate_simple_code_block' );
-register_deactivation_hook( __FILE__, 'deactivate_simple_code_block' );
 
 /**
  * The core plugin class that is used to define internationalization,

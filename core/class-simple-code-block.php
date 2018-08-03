@@ -75,8 +75,6 @@ class Simple_Code_Block {
 
 		$this->load_dependencies();
 		$this->set_locale();
-		$this->define_admin_hooks();
-		$this->define_public_hooks();
 		$this->define_gutenberg_hooks();
 
 	}
@@ -88,8 +86,6 @@ class Simple_Code_Block {
 	 *
 	 * - Simple_Code_Block_Loader. Orchestrates the hooks of the plugin.
 	 * - Simple_Code_Block_i18n. Defines internationalization functionality.
-	 * - Simple_Code_Block_Admin. Defines all hooks for the admin area.
-	 * - Simple_Code_Block_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -112,28 +108,10 @@ class Simple_Code_Block {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'core/class-simple-code-block-i18n.php';
 
 		/**
-		 * The class responsible for defining all actions that occur in the admin area.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-simple-code-block-admin.php';
-
-		/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-simple-code-block-public.php';
-
-		/**
 		 * The class responsible for defining all actions that occur about new WordPress editor: GUTENBERG
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'gutenberg/class-simple-code-block-gutenberg.php';
 
-		/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site and also into admin area, like libraries and helpers
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-simple-code-block-includes.php';
-
-		$includes = new Simple_Code_Block_Includes( $this->get_plugin_name(), $this->get_version() );
 
 		/**
 		 * Get loader using its singleton
@@ -160,44 +138,6 @@ class Simple_Code_Block {
 	}
 
 	/**
-	 * Register all of the hooks related to the admin area functionality
-	 * of the plugin.
-	 *
-	 * Instance all class you have into ADMIN folder and add the objet to the loader,
-	 * and remember to 'require_once' into admin class on the function: load_dependencies()
-	 * similar this core class.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function define_admin_hooks() {
-
-		$plugin_admin = new Simple_Code_Block_Admin( $this->get_plugin_name(), $this->get_version() );
-
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-	}
-
-	/**
-	 * Register all of the hooks related to the public-facing functionality
-	 * of the plugin.
-	 *
-	 * Instance all class you have into PUBLIC folder and add the objet to the loader,
-	 * and remember to 'require_once' into admin class on the function: load_dependencies()
-	 * similar this core class.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function define_public_hooks() {
-
-		$plugin_public = new Simple_Code_Block_Public( $this->get_plugin_name(), $this->get_version() );
-
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-	}
-
-	/**
 	 * Register all of the hooks related to Gutenberg
 	 *
 	 * Instance all class you have into GUTENBERG folder and add the objet to the loader,
@@ -214,11 +154,6 @@ class Simple_Code_Block {
 		$this->loader->add_action( 'enqueue_block_editor_assets', $plugin_gutenberg, 'enqueue_all_blocks_assets_editor' );
 		$this->loader->add_action( 'enqueue_block_assets', $plugin_gutenberg, 'enqueue_all_blocks_assets' );
 		$this->loader->add_action( 'enqueue_block_assets', $plugin_gutenberg, 'enqueue_all_blocks_assets_frontend' );
-
-		$this->loader->add_filter( 'block_categories', $plugin_gutenberg, 'add_custom_blocks_categories', 10, 2 );
-		$this->loader->add_action( 'init', $plugin_gutenberg, 'register_dynamic_blocks' );
-		$this->loader->add_action( 'init', $plugin_gutenberg, 'register_meta_fields' );
-		//$this->loader->add_filter( 'register_post_type_args', $plugin_gutenberg, 'add_templates_to_post_types', 20, 2 );
 
 	}
 
