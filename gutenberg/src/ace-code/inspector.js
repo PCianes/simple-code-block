@@ -26,6 +26,7 @@ export default class Inspector extends Component {
 						value={ mode }
 						options={ [
 							{ value: 'php', label: __( 'PHP', 'simple-code-block' ) },
+							{ value: 'json', label: __( 'JSON', 'simple-code-block' ) },
 							{ value: 'css', label: __( 'CSS', 'simple-code-block' ) },
 							{ value: 'html', label: __( 'HTML', 'simple-code-block' ) },
 							] }

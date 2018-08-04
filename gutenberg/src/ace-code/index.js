@@ -1,11 +1,14 @@
 /**
  * Block dependencies
  */
+
 import classnames from 'classnames';
 import AceEditor from 'react-ace';
 import './brace-dependencies';
 import 'brace/ext/language_tools';
 import Inspector from './inspector';
+//import './style.scss';
+//import './editor.scss';
 
 /**
  * Internal block libraries

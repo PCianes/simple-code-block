@@ -66,13 +66,14 @@ class Simple_Code_Block_Gutenberg {
 			filemtime( plugin_dir_path( __FILE__ ) . 'dist/blocks.build.js' )
 		);
 
+		/*
 		wp_enqueue_style(
 			'simple-code-block-gutenberg-editor',
 			plugin_dir_url( __FILE__ ) . 'dist/blocks.editor.build.css',
 			array( 'wp-edit-blocks' ),
 			filemtime( plugin_dir_path( __FILE__ ) . 'dist/blocks.editor.build.css' )
 		);
-
+		*/
 	}
 
 	/**
