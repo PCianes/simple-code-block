@@ -23,7 +23,7 @@ export default registerBlockType(
   'simple-code-block/ace',
     {
       title: __( 'ACE Code Editor', 'simple-code-block' ),
-      description: __( 'A simple block to insert code with Ace Editor', 'simple-code-block'),
+      description: __( 'A simple block to insert and show code with Ace Editor', 'simple-code-block'),
       category: 'formatting',
       icon: {
         background: 'rgba(41, 170, 227)',
@@ -47,6 +47,12 @@ export default registerBlockType(
 					attribute: 'data-theme',
 					default: 'monokai'
 				},
+				fontsize: {
+					source: 'attribute',
+					selector: 'pre',
+					attribute: 'data-fontsize',
+					default: '14'
+				},
 				lines: {
 					source: 'attribute',
 					selector: 'pre',
@@ -64,7 +70,7 @@ export default registerBlockType(
 			},
 			edit: props => {
 				const { attributes, className, setAttributes } = props;
-				const {  mode, theme, code } = attributes;
+				const {  mode, theme, code, fontsize } = attributes;
 				return (
 					<div className={ classnames( className ) }>
 						<Inspector { ...{ setAttributes, ...props} } />
@@ -73,7 +79,7 @@ export default registerBlockType(
 							height="250px"
 							minLines={10}
 							maxLines= {Infinity}
-							fontSize={14}
+							fontSize={ parseInt( fontsize ) }
 							mode={ mode }
 							theme={ theme }
 							onChange= { code => setAttributes( { code } ) }
@@ -98,9 +104,9 @@ export default registerBlockType(
 					</div>
 				);
 			},
-			save( { attributes: { mode, theme, lines, code } } ) {
+			save( { attributes: { mode, theme, lines, fontsize, code } } ) {
 				return (
-					<pre data-mode={ mode } data-theme={ theme } data-lines={ lines }>{ code }</pre>
+					<pre data-mode={ mode } data-theme={ theme } data-fontsize={ fontsize } data-lines={ lines }>{ code }</pre>
 				)
 			},
 		}
