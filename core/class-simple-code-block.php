@@ -112,7 +112,6 @@ class Simple_Code_Block {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'gutenberg/class-simple-code-block-gutenberg.php';
 
-
 		/**
 		 * Get loader using its singleton
 		 */
@@ -152,7 +151,7 @@ class Simple_Code_Block {
 		$plugin_gutenberg = new Simple_Code_Block_Gutenberg( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'enqueue_block_editor_assets', $plugin_gutenberg, 'enqueue_all_blocks_assets_editor' );
-		//$this->loader->add_action( 'enqueue_block_assets', $plugin_gutenberg, 'enqueue_all_blocks_assets' );
+		// $this->loader->add_action( 'enqueue_block_assets', $plugin_gutenberg, 'enqueue_all_blocks_assets' );
 		$this->loader->add_action( 'enqueue_block_assets', $plugin_gutenberg, 'enqueue_all_blocks_assets_frontend' );
 
 	}
