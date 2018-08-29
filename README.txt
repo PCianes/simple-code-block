@@ -15,7 +15,7 @@ A simple block to insert code into Gutenberg.
 
 A simple block to the new WordPress editor Gutenberg to insert and show code with Ace Editor.
 
-Now is veary easy share code in your own web with Gutenberg and this simple code block with the power of [Ace](https://ace.c9.io/): the successor of the Mozilla Skywriter (Bespin) project.
+Now is very easy to share code in your own web with Gutenberg and this simple code block with the power of [Ace](https://ace.c9.io/): the successor of the Mozilla Skywriter (Bespin) project.
 
 Ace is an embeddable code editor written in JavaScript with the features and performance of native editors such as Sublime, Vim and TextMate.
 
