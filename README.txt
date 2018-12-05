@@ -1,9 +1,9 @@
-=== Simple Code Block by Cianes' WP Suite ===
-Contributors: pablocianes
+=== Simple Code Block ===
+Contributors: sumapress, pablocianes
 Donate link: https://pablocianes.com/
 Tags: gutenberg, code, syntax highlighting, ace, php, block
 Requires at least: 4.6
-Tested up to: 4.9
+Tested up to: 5.0
 Stable tag: trunk
 Requires PHP: 5.2.4
 License: GPLv2 or later
@@ -51,10 +51,16 @@ You can change the language of your code and also the styles very easly and dyna
 
 == Changelog ==
 
+= 1.0.1 =
+* Compatible with WP5.0
+
 = 1.0.0 =
 * First publicly available version.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+* Compatible with WP5.0
 
 = 1.0.0 =
 * First publicly available version.

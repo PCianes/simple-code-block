@@ -24,11 +24,8 @@ export default registerBlockType(
     {
       title: __( 'ACE Code Editor', 'simple-code-block' ),
       description: __( 'A simple block to insert and show code with Ace Editor', 'simple-code-block'),
-      category: 'formatting',
-      icon: {
-        background: 'rgba(41, 170, 227)',
-        src: 'editor-code',
-      },
+      category: 'sumapress',
+      icon: 'editor-code',
       keywords: [
         __( 'Editor', 'simple-code-block' ),
         __( 'Code', 'simple-code-block' ),

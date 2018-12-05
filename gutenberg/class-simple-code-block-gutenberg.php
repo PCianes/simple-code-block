@@ -62,7 +62,7 @@ class Simple_Code_Block_Gutenberg {
 		wp_enqueue_script(
 			'simple-code-block-gutenberg-editor',
 			plugin_dir_url( __FILE__ ) . 'dist/blocks.build.js',
-			array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components' ),
+			array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor' ),
 			filemtime( plugin_dir_path( __FILE__ ) . 'dist/blocks.build.js' )
 		);
 
@@ -122,5 +122,25 @@ class Simple_Code_Block_Gutenberg {
 		);
 
 	}
+
+	/**
+	 * Add new custom categories for blocks
+	 *
+	 * @since    1.0.1
+	 */
+	public function add_custom_blocks_categories( $categories, $post ) {
+
+		$custom_category = array(
+			'slug'  => 'sumapress',
+			'title' => esc_html__( 'SumaPress', 'simple-cookie-control' ),
+		);
+
+		if ( false === array_search( $custom_category['slug'], array_column( $categories, 'slug' ) ) ) {
+			return array_merge( $categories, array( $custom_category ) );
+		}
+
+		return $categories;
+	}
+
 
 }
