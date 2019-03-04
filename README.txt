@@ -3,7 +3,7 @@ Contributors: sumapress, pablocianes
 Donate link: https://pablocianes.com/
 Tags: gutenberg, code, syntax highlighting, ace, php, block
 Requires at least: 4.6
-Tested up to: 5.0
+Tested up to: 5.1
 Stable tag: trunk
 Requires PHP: 5.2.4
 License: GPLv2 or later
@@ -51,6 +51,10 @@ You can change the language of your code and also the styles very easly and dyna
 
 == Changelog ==
 
+= 1.0.2 =
+* Add Lua language
+* Compatible with WP5.1
+
 = 1.0.1 =
 * Compatible with WP5.0
 
@@ -58,6 +62,10 @@ You can change the language of your code and also the styles very easly and dyna
 * First publicly available version.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+* Add Lua language
+* Compatible with WP5.1
 
 = 1.0.1 =
 * Compatible with WP5.0
