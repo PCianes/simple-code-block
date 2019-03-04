@@ -9,7 +9,7 @@
 				"grunt-wp-i18n": "~1.0.3",
 				"gulp": "^4.0.0",
 				"gulp-watch": "^5.0.0",
-				"gulp-wp-pot": "^2.3.3",
+				"gulp-wp-pot": "^2.3.4",
 				"load-grunt-tasks": "~4.0.0"
 		}
 }

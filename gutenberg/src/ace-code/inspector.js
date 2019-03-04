@@ -50,6 +50,7 @@ export default class Inspector extends Component {
 							{ value: 'swift', label: __( 'SWIFT', 'simple-code-block' ) },
 							{ value: 'ruby', label: __( 'RUBY', 'simple-code-block' ) },
 							{ value: 'python', label: __( 'PYTHON', 'simple-code-block' ) },
+							{ value: 'lua', label: __( 'LUA', 'simple-code-block' ) },
 						] }
 						onChange={ mode => setAttributes( { mode } ) }
 					/>

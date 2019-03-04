@@ -19,6 +19,7 @@ import 'brace/mode/typescript';
 import 'brace/mode/tsx';
 import 'brace/mode/ruby';
 import 'brace/mode/xml';
+import 'brace/mode/lua';
 
 import 'brace/theme/monokai';
 import 'brace/theme/terminal';
