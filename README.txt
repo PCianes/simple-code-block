@@ -51,6 +51,10 @@ You can change the language of your code and also the styles very easly and dyna
 
 == Changelog ==
 
+= 1.0.3 =
+* Add C languages
+* Compatible with WP5.2
+
 = 1.0.2 =
 * Add Lua language
 * Compatible with WP5.1
@@ -62,6 +66,10 @@ You can change the language of your code and also the styles very easly and dyna
 * First publicly available version.
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+* Add C languages
+* Compatible with WP5.2
 
 = 1.0.2 =
 * Add Lua language

@@ -51,6 +51,8 @@ export default class Inspector extends Component {
 							{ value: 'ruby', label: __( 'RUBY', 'simple-code-block' ) },
 							{ value: 'python', label: __( 'PYTHON', 'simple-code-block' ) },
 							{ value: 'lua', label: __( 'LUA', 'simple-code-block' ) },
+							{ value: 'c_cpp', label: __( 'C++', 'simple-code-block' ) },
+							{ value: 'csharp', label: __( 'C#', 'simple-code-block' ) },
 						] }
 						onChange={ mode => setAttributes( { mode } ) }
 					/>
