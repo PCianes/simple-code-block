@@ -44,7 +44,11 @@ const attributes = {
 		source: 'text',
 		selector: 'pre',
 		default: '<?php'
-	}
+	},
+	showLinesNumber: {
+		type: 'boolean',
+		default: true
+	},
 };
 
 /**
@@ -68,7 +72,7 @@ export default registerBlockType(
 		},
 		edit: props => {
 			const { attributes, className, setAttributes } = props;
-			const {  mode, theme, code, fontsize } = attributes;
+			const {  mode, theme, code, fontsize, showLinesNumber } = attributes;
 			return (
 				<div className={ classnames( className ) }>
 					<Inspector { ...{ setAttributes, ...props} } />
@@ -92,17 +96,17 @@ export default registerBlockType(
 							})
 						}}
 						showPrintMargin={false}
-						showGutter={true}
+						showGutter={showLinesNumber}
 						highlightActiveLine={true}
 						enableBasicAutocompletion={true}
 						enableLiveAutocompletion={true}
-						showLineNumbers= {true}
+						showLineNumbers= {showLinesNumber}
 						tabSize={4}
 						/>
 				</div>
 			);
 		},
-		save( { attributes: { mode, theme, lines, fontsize, code } } ) {
+		save( { attributes: { mode, theme, lines, fontsize, code, showLinesNumber } } ) {
 			var preStyle = {
 				position: 'absolute',
 				top: 0,
@@ -112,7 +116,7 @@ export default registerBlockType(
 			};
 			return (
 				<div style="height: 1px; position:relative;">
-					<pre className="wp-block-simple-code-block-ace" style={ preStyle } data-mode={ mode } data-theme={ theme } data-fontsize={ fontsize } data-lines={ lines }>{ code }</pre>
+					<pre className="wp-block-simple-code-block-ace" style={ preStyle } data-mode={ mode } data-theme={ theme } data-fontsize={ fontsize } data-lines={ lines } data-showlines={showLinesNumber}>{ code }</pre>
 				</div>
 			)
 		},

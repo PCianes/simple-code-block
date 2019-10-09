@@ -4,7 +4,9 @@
 		var SCB = $('pre.wp-block-simple-code-block-ace');
 		if ( SCB.length > 0 ) {
 			SCB.each( function( index ){
-				var codeElement = $( this ), editor = ace.edit( codeElement[0] );
+				var codeElement = $( this ),
+					editor = ace.edit( codeElement[0] ),
+					showLines = codeElement.data('showlines');
 					editor.setTheme( 'ace/theme/' + codeElement.data('theme') );
 					editor.session.setMode( 'ace/mode/' + codeElement.data('mode') );
 					editor.setFontSize( codeElement.data('fontsize') );
@@ -15,7 +17,8 @@
 						autoScrollEditorIntoView: true,
 						maxLines: codeElement.data('lines'),
 						highlightActiveLine: false,
-						highlightGutterLine: false
+						highlightGutterLine: false,
+						showLineNumbers: 'undefined' === typeof( showLines ) || showLines ? true : false
 					});
 					editor.renderer.$cursorLayer.element.style.opacity = 0;
 

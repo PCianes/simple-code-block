@@ -4,7 +4,7 @@
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls } = wp.editor;
-const { PanelBody, SelectControl, RangeControl } = wp.components;
+const { PanelBody, SelectControl, RangeControl, ToggleControl } = wp.components;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -16,8 +16,11 @@ export default class Inspector extends Component {
     }
 
     render() {
-        const { attributes: { mode, theme, lines, fontsize }, setAttributes } = this.props;
-
+		const { attributes: { mode, theme, lines, fontsize, showLinesNumber }, setAttributes } = this.props;
+		let lineOptions = [{ value: 'Infinity', label: __( 'All lines', 'simple-code-block' ) }];
+		for ( let i = 5; i <=100; i+=5 ){
+			lineOptions.push( { value: i, label: i } );
+		}
         return (
 			<InspectorControls>
 				<PanelBody>
@@ -113,31 +116,14 @@ export default class Inspector extends Component {
 					<SelectControl
 						label={ __( 'Lines to show in frontend without scroll', 'simple-code-block' ) }
 						value={ lines }
-						options={ [
-							{ value: 'Infinity', label: __( 'All lines', 'simple-code-block' ) },
-							{ value: '5', label: __( '5', 'simple-code-block' ) },
-							{ value: '10', label: __( '10', 'simple-code-block' ) },
-							{ value: '15', label: __( '15', 'simple-code-block' ) },
-							{ value: '20', label: __( '20', 'simple-code-block' ) },
-							{ value: '25', label: __( '25', 'simple-code-block' ) },
-							{ value: '30', label: __( '30', 'simple-code-block' ) },
-							{ value: '35', label: __( '35', 'simple-code-block' ) },
-							{ value: '40', label: __( '40', 'simple-code-block' ) },
-							{ value: '45', label: __( '45', 'simple-code-block' ) },
-							{ value: '50', label: __( '50', 'simple-code-block' ) },
-							{ value: '55', label: __( '55', 'simple-code-block' ) },
-							{ value: '60', label: __( '60', 'simple-code-block' ) },
-							{ value: '65', label: __( '65', 'simple-code-block' ) },
-							{ value: '70', label: __( '70', 'simple-code-block' ) },
-							{ value: '75', label: __( '75', 'simple-code-block' ) },
-							{ value: '80', label: __( '80', 'simple-code-block' ) },
-							{ value: '85', label: __( '85', 'simple-code-block' ) },
-							{ value: '90', label: __( '90', 'simple-code-block' ) },
-							{ value: '95', label: __( '95', 'simple-code-block' ) },
-							{ value: '100', label: __( '100', 'simple-code-block' ) },
-						] }
+						options={ lineOptions }
 						onChange={ lines => setAttributes( { lines } ) }
 					/>
+					<ToggleControl
+                        label={ __( 'Show lines number on frontend', 'simple-code-block' ) }
+                        checked={ showLinesNumber }
+                        onChange={ showLinesNumber => setAttributes( { showLinesNumber } ) }
+                    />
 				</PanelBody>
 			</InspectorControls>
         );
