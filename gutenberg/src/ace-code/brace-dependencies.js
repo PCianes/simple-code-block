@@ -22,6 +22,7 @@ import 'brace/mode/xml';
 import 'brace/mode/lua';
 import 'brace/mode/c_cpp';
 import 'brace/mode/csharp';
+import 'brace/mode/sh';
 
 import 'brace/theme/monokai';
 import 'brace/theme/terminal';
