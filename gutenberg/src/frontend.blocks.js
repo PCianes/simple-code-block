@@ -1,7 +1,7 @@
 (function( $ ) {
 	'use strict';
 	$( window ).load(function() {
-		var SCB = $('.wp-block-simple-code-block-ace');
+		var SCB = $('pre.wp-block-simple-code-block-ace');
 		if ( SCB.length > 0 ) {
 			SCB.each( function( index ){
 				var codeElement = $( this ), editor = ace.edit( codeElement[0] );
@@ -18,6 +18,10 @@
 						highlightGutterLine: false
 					});
 					editor.renderer.$cursorLayer.element.style.opacity = 0;
+
+				if( codeElement.parent().hasClass('wp-block-simple-code-block-ace') ){
+					codeElement.parent().css('height', editor.renderer.layerConfig.maxHeight );
+				}
 			});
 		}
  	});
