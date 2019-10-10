@@ -27,6 +27,12 @@ For each block you can choose many languages and styles:
 
 What You See in the backend with Gutenberg editor Is What You Get! and the plugin only enqueue the selected assets to highlighting your code with your own selected options.
 
+= 1.1.0 =
+* Add option: show copy button
+* Add option: show or hide lines numbers
+* Improve Safari Browser compatibility
+* Add Bash/Shell language
+
 == Installation ==
 
 1. Upload `simple-code-block.php` to the `/wp-content/plugins/` directory
@@ -51,6 +57,12 @@ You can change the language of your code and also the styles very easly and dyna
 
 == Changelog ==
 
+= 1.1.0 =
+* Add option: show copy button
+* Add option: show or hide lines numbers
+* Improve Safari Browser compatibility
+* Add Bash/Shell language
+
 = 1.0.3 =
 * Add C languages
 * Compatible with WP5.2
@@ -66,6 +78,12 @@ You can change the language of your code and also the styles very easly and dyna
 * First publicly available version.
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+* Add option: show copy button
+* Add option: show or hide lines numbers
+* Improve Safari Browser compatibility
+* Add Bash/Shell language
 
 = 1.0.3 =
 * Add C languages

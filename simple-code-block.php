@@ -8,7 +8,7 @@
  * that starts the plugin.
  *
  * @link              https://pablocianes.com/
- * @since             1.0.0
+ * @since             1.1.0
  * @package           Simple_Code_Block
  *
  * @wordpress-plugin
@@ -48,7 +48,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'SIMPLE_CODE_BLOCK', '1.0.3' );
+define( 'SIMPLE_CODE_BLOCK', '1.1.0' );
 
 /**
  * The core plugin class that is used to define internationalization,
