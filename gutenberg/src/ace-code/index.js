@@ -115,7 +115,7 @@ export default registerBlockType(
 				left: 0
 			};
 			return (
-				<div style="height: 1px; position:relative;">
+				<div style="height: 250px; position:relative; margin-bottom: 50px;">
 					<pre className="wp-block-simple-code-block-ace" style={ preStyle } data-mode={ mode } data-theme={ theme } data-fontsize={ fontsize } data-lines={ lines } data-showlines={showLinesNumber}>{ code }</pre>
 				</div>
 			)
