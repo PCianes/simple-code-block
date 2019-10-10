@@ -7,8 +7,7 @@ import AceEditor from 'react-ace';
 import './brace-dependencies';
 import 'brace/ext/language_tools';
 import Inspector from './inspector';
-//import './style.scss';
-//import './editor.scss';
+import { Icon } from '@wordpress/components';
 
 /**
  * Internal block libraries
@@ -48,6 +47,10 @@ const attributes = {
 	showLinesNumber: {
 		type: 'boolean',
 		default: true
+	},
+	allowCopy: {
+		type: 'boolean',
+		default: false
 	},
 };
 
@@ -106,7 +109,13 @@ export default registerBlockType(
 				</div>
 			);
 		},
-		save( { attributes: { mode, theme, lines, fontsize, code, showLinesNumber } } ) {
+		save( { attributes: { mode, theme, lines, fontsize, code, showLinesNumber, allowCopy } } ) {
+			var iconStyle = {
+				position: 'absolute',
+				top: -15,
+				right: 0,
+				cursor: 'pointer'
+			};
 			var preStyle = {
 				position: 'absolute',
 				top: 0,
@@ -116,7 +125,8 @@ export default registerBlockType(
 			};
 			return (
 				<div style="height: 250px; position:relative; margin-bottom: 50px;">
-					<pre className="wp-block-simple-code-block-ace" style={ preStyle } data-mode={ mode } data-theme={ theme } data-fontsize={ fontsize } data-lines={ lines } data-showlines={showLinesNumber}>{ code }</pre>
+					{ allowCopy && <div style={ iconStyle } className="copy-simple-code-block"><Icon icon="admin-page" /></div> }
+					<pre className="wp-block-simple-code-block-ace" style={ preStyle } data-mode={ mode } data-theme={ theme } data-fontsize={ fontsize } data-lines={ lines } data-showlines={showLinesNumber} data-copy={allowCopy}>{ code }</pre>
 				</div>
 			)
 		},

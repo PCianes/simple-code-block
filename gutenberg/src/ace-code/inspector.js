@@ -16,7 +16,7 @@ export default class Inspector extends Component {
     }
 
     render() {
-		const { attributes: { mode, theme, lines, fontsize, showLinesNumber }, setAttributes } = this.props;
+		const { attributes: { mode, theme, lines, fontsize, showLinesNumber, allowCopy }, setAttributes } = this.props;
 		let lineOptions = [{ value: 'Infinity', label: __( 'All lines', 'simple-code-block' ) }];
 		for ( let i = 5; i <=100; i+=5 ){
 			lineOptions.push( { value: i, label: i } );
@@ -120,9 +120,14 @@ export default class Inspector extends Component {
 						onChange={ lines => setAttributes( { lines } ) }
 					/>
 					<ToggleControl
-                        label={ __( 'Show lines number on frontend', 'simple-code-block' ) }
+                        label={ __( 'Show lines number', 'simple-code-block' ) }
                         checked={ showLinesNumber }
                         onChange={ showLinesNumber => setAttributes( { showLinesNumber } ) }
+                    />
+					<ToggleControl
+                        label={ __( 'Show copy button', 'simple-code-block' ) }
+                        checked={ allowCopy }
+                        onChange={ allowCopy => setAttributes( { allowCopy } ) }
                     />
 				</PanelBody>
 			</InspectorControls>
