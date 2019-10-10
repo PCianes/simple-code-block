@@ -7,6 +7,7 @@
 				var codeElement = $( this ),
 					editor = ace.edit( codeElement[0] ),
 					showLines = codeElement.data('showlines');
+					showLines = 'undefined' === typeof( showLines ) || showLines ? true : false;
 					editor.setTheme( 'ace/theme/' + codeElement.data('theme') );
 					editor.session.setMode( 'ace/mode/' + codeElement.data('mode') );
 					editor.setFontSize( codeElement.data('fontsize') );
@@ -18,13 +19,15 @@
 						maxLines: codeElement.data('lines'),
 						highlightActiveLine: false,
 						highlightGutterLine: false,
-						showLineNumbers: 'undefined' === typeof( showLines ) || showLines ? true : false
+						showLineNumbers: showLines,
+						showGutter: showLines
 					});
 					editor.renderer.$cursorLayer.element.style.opacity = 0;
-
-				if( codeElement.parent().hasClass('wp-block-simple-code-block-ace') ){
-					codeElement.parent().css('height', editor.renderer.layerConfig.maxHeight );
-				}
+					editor.renderer.on('afterRender', function() {
+						if( codeElement.parent().hasClass('wp-block-simple-code-block-ace') ){
+							codeElement.parent().css('height', editor.renderer.layerConfig.height );
+						}
+					});
 			});
 		}
  	});
