@@ -72,12 +72,6 @@ export default registerBlockType(
 			);
 		},
 		save( { attributes: { mode, theme, lines, fontsize, code, showLinesNumber, allowCopy, positionButtonX, positionButtonY } } ) {
-			var iconStyle = {
-				position: 'absolute',
-				top: -positionButtonY + 'px',
-				right: -positionButtonX + 'px',
-				cursor: 'pointer'
-			};
 			var preStyle = {
 				position: 'absolute',
 				top: 0,
@@ -87,8 +81,8 @@ export default registerBlockType(
 			};
 			return (
 				<div style="height: 250px; position:relative; margin-bottom: 50px;">
-					{ allowCopy && <div style={ iconStyle } className="copy-simple-code-block"><Icon icon="admin-page" /></div> }
-					<pre className="wp-block-simple-code-block-ace" style={ preStyle } data-mode={ mode } data-theme={ theme } data-fontsize={ fontsize } data-lines={ lines } data-showlines={showLinesNumber} data-copy={allowCopy}>{ code }</pre>
+					{ allowCopy && <div style={{ position: 'absolute', top: -positionButtonY + 'px', right: -positionButtonX + 'px', cursor: 'pointer' }} className="copy-simple-code-block"><Icon icon="admin-page" /></div> }
+					<pre className="wp-block-simple-code-block-ace" style={ preStyle } data-mode={ mode } data-theme={ theme } data-fontsize={ fontsize } data-lines={ lines } data-showlines={ showLinesNumber } data-copy={ allowCopy } data-x={ positionButtonX } data-y={ positionButtonY }>{ code }</pre>
 				</div>
 			)
 		},
