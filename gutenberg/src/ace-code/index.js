@@ -16,6 +16,14 @@ import { Icon } from '@wordpress/components';
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
+function copyButton( positionButtonX, positionButtonY ){
+	return (
+		<div style={{ position: 'absolute', top: -positionButtonY + 'px', right: -positionButtonX + 'px', cursor: 'pointer' }} className="copy-simple-code-block">
+			<Icon icon="admin-page" />
+		</div>
+	);
+}
+
 /**
  * Register block
  */
@@ -81,8 +89,8 @@ export default registerBlockType(
 			};
 			return (
 				<div style="height: 250px; position:relative; margin-bottom: 50px;">
-					{ allowCopy && <div style={{ position: 'absolute', top: -positionButtonY + 'px', right: -positionButtonX + 'px', cursor: 'pointer' }} className="copy-simple-code-block"><Icon icon="admin-page" /></div> }
-					<pre className="wp-block-simple-code-block-ace" style={ preStyle } data-mode={ mode } data-theme={ theme } data-fontsize={ fontsize } data-lines={ lines } data-showlines={ showLinesNumber } data-copy={ allowCopy } data-x={ positionButtonX } data-y={ positionButtonY }>{ code }</pre>
+					{ allowCopy && copyButton( positionButtonX, positionButtonY ) }
+					<pre className="wp-block-simple-code-block-ace" style={ preStyle } data-mode={ mode } data-theme={ theme } data-fontsize={ fontsize } data-lines={ lines } data-showlines={ showLinesNumber } data-copy={ allowCopy }>{ code }</pre>
 				</div>
 			)
 		},

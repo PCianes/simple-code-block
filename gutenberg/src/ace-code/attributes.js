@@ -37,17 +37,11 @@ const attributes = {
 		default: false
 	},
 	positionButtonX: {
-		type: 'number',
-		source: 'attribute',
-		selector: 'pre',
-		attribute: 'data-x',
+		type: 'string',
 		default: 0
 	},
 	positionButtonY: {
-		type: 'number',
-		source: 'attribute',
-		selector: 'pre',
-		attribute: 'data-y',
+		type: 'string',
 		default: 20
 	},
 };
