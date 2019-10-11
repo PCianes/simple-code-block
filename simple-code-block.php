@@ -8,13 +8,13 @@
  * that starts the plugin.
  *
  * @link              https://pablocianes.com/
- * @since             1.1.0
+ * @since             1.0.0
  * @package           Simple_Code_Block
  *
  * @wordpress-plugin
  * Plugin Name:       Simple Code Block
  * Description:       A simple block to insert code into Gutenberg.
- * Version:           1.0.3
+ * Version:           1.1.0
  * Author:            Pablo Cianes
  * Author URI:        https://pablocianes.com/
  * License:           GPL-2.0+

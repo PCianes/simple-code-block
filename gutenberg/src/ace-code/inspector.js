@@ -4,7 +4,7 @@
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls } = wp.editor;
-const { PanelBody, SelectControl, RangeControl, ToggleControl } = wp.components;
+const { PanelBody, SelectControl, RangeControl, ToggleControl, TextControl } = wp.components;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -16,7 +16,7 @@ export default class Inspector extends Component {
     }
 
     render() {
-		const { attributes: { mode, theme, lines, fontsize, showLinesNumber, allowCopy }, setAttributes } = this.props;
+		const { attributes: { mode, theme, lines, fontsize, showLinesNumber, allowCopy, positionButtonX, positionButtonY }, setAttributes } = this.props;
 		let lineOptions = [{ value: 'Infinity', label: __( 'All lines', 'simple-code-block' ) }];
 		for ( let i = 5; i <=100; i+=5 ){
 			lineOptions.push( { value: i, label: i } );
@@ -105,14 +105,14 @@ export default class Inspector extends Component {
 						onChange={ theme => setAttributes( { theme } ) }
 					/>
 					<RangeControl
-              beforeIcon="arrow-left-alt2"
-              afterIcon="arrow-right-alt2"
-							label={ __( 'Font size px', 'simple-code-block' ) }
-							value={ fontsize }
-							onChange={ fontsize => setAttributes( { fontsize } ) }
-              min={ 8 }
-              max={ 28 }
-          />
+						beforeIcon="arrow-left-alt2"
+						afterIcon="arrow-right-alt2"
+						label={ __( 'Font size px', 'simple-code-block' ) }
+						value={ fontsize }
+						onChange={ fontsize => setAttributes( { fontsize } ) }
+						min={ 8 }
+						max={ 28 }
+					/>
 					<SelectControl
 						label={ __( 'Lines to show in frontend without scroll', 'simple-code-block' ) }
 						value={ lines }
@@ -129,6 +129,22 @@ export default class Inspector extends Component {
                         checked={ allowCopy }
                         onChange={ allowCopy => setAttributes( { allowCopy } ) }
                     />
+					{ allowCopy &&
+						<TextControl
+							label={ __( 'Adjust position X', 'simple-code-block' ) }
+							type="number"
+							value={ positionButtonX }
+							onChange={ ( positionButtonX ) => setAttributes( { positionButtonX } ) }
+						/>
+					}
+					{ allowCopy &&
+						<TextControl
+							label={ __( 'Adjust position Y', 'simple-code-block' ) }
+							type="number"
+							value={ positionButtonY }
+							onChange={ ( positionButtonY ) => setAttributes( { positionButtonY } ) }
+						/>
+					}
 				</PanelBody>
 			</InspectorControls>
         );

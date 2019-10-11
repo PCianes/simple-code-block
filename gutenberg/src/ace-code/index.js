@@ -7,6 +7,7 @@ import AceEditor from 'react-ace';
 import './brace-dependencies';
 import 'brace/ext/language_tools';
 import Inspector from './inspector';
+import attributes from './attributes';
 import { Icon } from '@wordpress/components';
 
 /**
@@ -14,45 +15,6 @@ import { Icon } from '@wordpress/components';
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const attributes = {
-	mode: {
-		source: 'attribute',
-		selector: 'pre',
-		attribute: 'data-mode',
-		default: 'php'
-	},
-	theme: {
-		source: 'attribute',
-		selector: 'pre',
-		attribute: 'data-theme',
-		default: 'monokai'
-	},
-	fontsize: {
-		source: 'attribute',
-		selector: 'pre',
-		attribute: 'data-fontsize',
-		default: '14'
-	},
-	lines: {
-		source: 'attribute',
-		selector: 'pre',
-		attribute: 'data-lines',
-		default: 'Infinity'
-	},
-	code: {
-		source: 'text',
-		selector: 'pre',
-		default: '<?php'
-	},
-	showLinesNumber: {
-		type: 'boolean',
-		default: true
-	},
-	allowCopy: {
-		type: 'boolean',
-		default: false
-	},
-};
 
 /**
  * Register block
@@ -109,11 +71,11 @@ export default registerBlockType(
 				</div>
 			);
 		},
-		save( { attributes: { mode, theme, lines, fontsize, code, showLinesNumber, allowCopy } } ) {
+		save( { attributes: { mode, theme, lines, fontsize, code, showLinesNumber, allowCopy, positionButtonX, positionButtonY } } ) {
 			var iconStyle = {
 				position: 'absolute',
-				top: -15,
-				right: 0,
+				top: -positionButtonY + 'px',
+				right: -positionButtonX + 'px',
 				cursor: 'pointer'
 			};
 			var preStyle = {
