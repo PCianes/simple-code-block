@@ -83,6 +83,10 @@ class Simple_Code_Block_Gutenberg {
 	 */
 	public function enqueue_all_blocks_assets() {
 
+		if ( ! has_block('simple-code-block/ace') ) {
+			return;
+		}
+
 		wp_enqueue_style(
 			'simple-code-block-gutenberg',
 			plugin_dir_url( __FILE__ ) . 'dist/blocks.style.build.css',
@@ -103,7 +107,7 @@ class Simple_Code_Block_Gutenberg {
 		 *
 		 * @since    1.0.0
 		 */
-		if ( is_admin() ) {
+		if ( is_admin() || ! has_block('simple-code-block/ace') ) {
 			return;
 		}
 

@@ -10,7 +10,7 @@
 					showLines = 'undefined' === typeof( showLines ) || showLines ? true : false;
 
 				editor.setTheme( 'ace/theme/' + codeElement.data('theme') );
-				editor.session.setMode( 'ace/mode/' + codeElement.data('mode') );
+				editor.session.setMode( { path: 'ace/mode/' + codeElement.data('mode'), inline: true } );
 				editor.setFontSize( codeElement.data('fontsize') );
 				editor.setOptions({
 					readOnly: true,

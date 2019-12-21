@@ -33,6 +33,10 @@ What You See in the backend with Gutenberg editor Is What You Get! and the plugi
 * Improve Safari Browser compatibility
 * Add Bash/Shell language
 
+= 1.2.0 =
+* Allow working without use of <?php tag
+* Improve WPO with better enqueue
+
 == Installation ==
 
 1. Upload `simple-code-block.php` to the `/wp-content/plugins/` directory
@@ -56,6 +60,10 @@ You can change the language of your code and also the styles very easly and dyna
 2. Frontend view.
 
 == Changelog ==
+
+= 1.2.0 =
+* Allow working without use of <?php tag
+* Improve WPO with better enqueue
 
 = 1.1.0 =
 * Add option: show copy button
