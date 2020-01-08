@@ -107,7 +107,7 @@ class Simple_Code_Block_Gutenberg {
 		 *
 		 * @since    1.0.0
 		 */
-		if ( is_admin() || ! has_block('simple-code-block/ace') ) {
+		if ( is_admin() || ! has_block('simple-code-block/ace') || ! is_archive() ) {
 			return;
 		}
 

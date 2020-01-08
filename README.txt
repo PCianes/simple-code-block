@@ -61,6 +61,9 @@ You can change the language of your code and also the styles very easly and dyna
 
 == Changelog ==
 
+= 1.2.1 =
+* Allow enqueue assets on archive pages
+
 = 1.2.0 =
 * Allow working without use of <?php tag
 * Improve WPO with better enqueue
@@ -87,25 +90,18 @@ You can change the language of your code and also the styles very easly and dyna
 
 == Upgrade Notice ==
 
+= 1.2.1 =
+* Allow enqueue assets on archive pages
+
+= 1.2.0 =
+* Allow working without use of <?php tag
+* Improve WPO with better enqueue
+
 = 1.1.0 =
 * Add option: show copy button
 * Add option: show or hide lines numbers
 * Improve Safari Browser compatibility
 * Add Bash/Shell language
-
-= 1.0.3 =
-* Add C languages
-* Compatible with WP5.2
-
-= 1.0.2 =
-* Add Lua language
-* Compatible with WP5.1
-
-= 1.0.1 =
-* Compatible with WP5.0
-
-= 1.0.0 =
-* First publicly available version.
 
 == Feedback and support ==
 
