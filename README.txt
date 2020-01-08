@@ -61,6 +61,9 @@ You can change the language of your code and also the styles very easly and dyna
 
 == Changelog ==
 
+= 1.2.2 =
+* Fix bug on previous minor version
+
 = 1.2.1 =
 * Allow enqueue assets on archive pages
 
