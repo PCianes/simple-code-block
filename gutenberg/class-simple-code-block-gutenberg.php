@@ -111,7 +111,7 @@ class Simple_Code_Block_Gutenberg {
 			return;
 		}
 
-		if ( has_block('simple-code-block/ace') || is_archive() ) {
+		if ( has_block('simple-code-block/ace') || is_archive() || is_home() ) {
 			
 			wp_enqueue_script(
 				'simple-code-block-gutenberg-frontend-ace',
